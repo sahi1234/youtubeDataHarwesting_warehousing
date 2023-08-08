@@ -28,9 +28,9 @@ Once the installation of packages are done, we can run the project from **cmd** 
 
                     streamlit run pathToFile\YT_Analysis.py
 
-This will open a local browser with port no 8501. The screenshots of the first rendered application is as shown below.
+This will open a local browser with port no 8501. The screenshots of the first rendered application are uploaded to the repository.
 
-   ![Uploading img2.PNG…]()
+
 
 
 
