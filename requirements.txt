@@ -1,0 +1,10 @@
+# list of python packages involved in the project development
+
+
+pip install --upgrade google-api-python-client
+pip install --upgrade google-auth-oauthlib google-auth-httplib2
+pip install pandas
+pip install streamlit
+pip install numpy
+pip install pymongo
+pip install mysql.connector
