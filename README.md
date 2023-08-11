@@ -30,6 +30,18 @@ Once the installation of packages are done, we can run the project from **cmd** 
 
 This will open a local browser with port no 8501. The screenshots of the first rendered application are uploaded to the repository.
 
+## Execution steps
+1. Update connection strings for DBs and api key for google api.
+2. streamlit run pathToFile\YT_Analysis.py from cmd line.
+3. Enter Channel id(s)(comma separated if multiple) as input.
+4. Data will be extracted and inserted into MongoDB. A message will be shown once the process completes.
+5. Data can be transferred from MongoDB to Mysql DB by selecting the channel ids (which can be multiple) from the dropdown available in 
+   the application.
+6. Perform Data analysis through provided options in the application.
+
+##  Demo Link
+https://screenrec.com/share/yx0PBVsf4a
+
 
 
 
