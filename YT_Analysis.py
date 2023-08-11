@@ -12,7 +12,7 @@ from function_list import *
 
 
 # # Set up the API client
-# api_key = "AIzaSyAU6QWHKRub3CjNfwMYFOBkXxhN1xlznj8"
+# api_key = "api key"
 # youtube = build('youtube', 'v3', developerKey=api_key)
 
 #Mongodb connection string
@@ -27,11 +27,11 @@ mycursor = mycon.cursor()
 
 
 # channel_id = "UCnz-ZXXER4jOvuED5trXfEA"
-# Channel_name = "techTFQ"
+
 def extract_data(channel_ids):
 
     print(channels)
-    st.write("Channel data is extracting......This take some time.....")
+    st.warning("Channel data is extracting......This take some time.....")
     for channel_id in channels:
         print(channel_id)
         channel_statistics = get_channel_stats(youtube, channel_id)
@@ -68,6 +68,7 @@ def extract_data(channel_ids):
         comment_collection.insert_many(comments_statistics)
 
     print("data inserted in Mongodb successfully............")
+    st.warning("Data inserted into the MongoGB Successfully..")
 
 
 def transfer_data(channels):
@@ -107,6 +108,7 @@ def transfer_data(channels):
         insert_into_videos(videos_df)
         insert_into_comments(comments_data_df)
     print("data transferred to  Mysql successfully....")
+    st.warning("Data transfered to Mysql successfully...")
 
 
 st.title(':blue[YouTube Data Harvesting and Warehousing]')
@@ -124,7 +126,7 @@ query_select = st.radio(":violet[Please select an option of Sql data analysis]",
     "Show What are the top 10 most viewed videos and their respective channels",
     "Show How many comments were made on each video, and what are their corresponding video names",
     "Show Which videos have the highest number of likes, and what are their corresponding channel names",
-    "Show what is the total number of likes and dislikes for each video, and what are their corresponding video names",
+    "Show what is the total number of likes for each video, and what are their corresponding video names",
     "Show what is the total number of views for each channel, and what are their corresponding channel names",
     "Show what are the names of all the channels that have published videos in the year 2022",
     "Show what is the average duration of all videos in each channel, and what are their  corresponding channel names",
@@ -142,7 +144,7 @@ elif query_select == "Show How many comments were made on each video, and what a
     st.table(execute_radio_option(4))
 elif query_select == "Show Which videos have the highest number of likes, and what are their corresponding channel names":
     st.table(execute_radio_option(5))
-elif query_select == "Show what is the total number of likes and dislikes for each video, and what are their corresponding video names":
+elif query_select == "Show what is the total number of likes for each video, and what are their corresponding video names":
     st.table(execute_radio_option(6))
 elif query_select == "Show what is the total number of views for each channel, and what are their corresponding channel names":
     st.table(execute_radio_option(7))
