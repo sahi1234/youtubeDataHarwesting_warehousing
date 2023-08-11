@@ -271,7 +271,7 @@ GROUP BY channel_name, video_title"""
 from youtube_data.channels c
 inner join youtube_data.videos v on c.Channel_Id=v.Channel_Id
 GROUP BY channel_name order by video_count) a 
-)b where rnk =1"""
+)b where rnk =1 order by video_count desc"""
     elif num == 3:
         query = """select video_title, channel_name from 
 youtube_data.channels c
